@@ -55,7 +55,8 @@ header{
 
 /* MENU */
 .menu{
-  padding: 0% 5% 0% 5%;
+  margin: 0;
+  padding: 10% 5% 10% 5%;
 }
 .menu li{
   display: block;
@@ -148,7 +149,7 @@ footer a{
 /* MENU */
   .menu{
     display: flex;
-    padding: 2% 5% 2% 5%;
+    padding: 5%;
   }
   .menu li{
     display: inline-block;
@@ -172,9 +173,25 @@ footer a{
   }
 
   /* FOTOGALERIE */
+  .foto{
+    position: relative;
+  }
   .foto .popisek{
     display: none;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    margin:0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    position: absolute;
   }
+
+  .foto:hover .popisek{
+    display: block;
+    transform: translate(0, -30px);
+    transition: all 2s;
+  }
+
   .galerie{
     display: flex;
     flex-wrap: wrap;
@@ -210,17 +227,17 @@ footer a{
   .titulek {
     padding-top: 5%;
     font-size: 4rem;
-}
-.autor{
-  font-size: 1.5rem;
-   padding: 0% 0% 20% 0%; 
-}
-.perex{
-  font-size: 1rem;
-  padding: 5% 0% 5% 0%;
-  width: 940px;
-  margin: auto;
-}
+  }
+  .autor{
+    font-size: 1.5rem;
+    padding: 0% 0% 20% 0%; 
+  }
+  .perex{
+    font-size: 1rem;
+    padding: 5% 0% 5% 0%;
+    width: 940px;
+    margin: auto;
+  }
 
     /* MENU */
 
@@ -228,7 +245,7 @@ footer a{
       display: block;
       float: left;
       margin: 0;
-      padding-top: 0;
+      padding: 0 2% 0 2%;
     }
     .menu li{
       display: block;
@@ -236,6 +253,9 @@ footer a{
       width: 100%;
       border-top: 0;
       border-bottom: 0.1px solid silver;
+    }
+    .menu a{
+      font-size: 0.8rem;
     }
     
     /* OBSAH */
@@ -263,6 +283,28 @@ footer a{
     .foto{
       width: calc(100% / 3);
     }
+
+    .galerie{
+      position: relative;
+      padding-bottom: 30px;
+    }
+    .galerie::after{      /* element, který schová popisky v dolní řadě fotek */
+      content: "";
+      bottom: 0;
+      position: absolute;
+      height: 30px;
+      width: 100%;
+      background-color: silver;
+    }
+
+    .foto .popisek{
+      display: block;
+    }    
+    .foto:hover .popisek{
+      transform: translate(0, -30px);
+      transition: all 2s;
+    }
+
 
     /* PATICKA */
     footer{
